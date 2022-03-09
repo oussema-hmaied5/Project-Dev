@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>GoodGames | Community and Store HTML Game Template</title>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>GoodGames | Community and Store HTML Game Template</title>
+
+        <meta name="description" content="GoodGames - Bootstrap template for communities and games store">
+        <meta name="keywords" content="game, gaming, template, HTML template, responsive, Bootstrap, premium">
+        <meta name="author" content="_nK">
+
+        <link rel="icon" type="image/png" href="/FrontTemplate/assets/images/favicon.png">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- START: Styles -->
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7cOpen+Sans:400,700" rel="stylesheet" type="text/css">
+
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="/FrontTemplate/assets/vendor/bootstrap/dist/css/bootstrap.min.css">
+
+        <!-- FontAwesome -->
+        <script defer src="/FrontTemplate/assets/vendor/fontawesome-free/js/all.js"></script>
+        <script defer src="/FrontTemplate/assets/vendor/fontawesome-free/js/v4-shims.js"></script>
+
+        <!-- IonIcons -->
+        <link rel="stylesheet" href="/FrontTemplate/assets/vendor/ionicons/css/ionicons.min.css">
+
+        <!-- Flickity -->
+        <link rel="stylesheet" href="/FrontTemplate/assets/vendor/flickity/dist/flickity.min.css">
+
+        <!-- Photoswipe -->
+        <link rel="stylesheet" type="text/css" href="/FrontTemplate/assets/vendor/photoswipe/dist/photoswipe.css">
+        <link rel="stylesheet" type="text/css" href="/FrontTemplate/assets/vendor/photoswipe/dist/default-skin/default-skin.css">
+
+        <!-- Seiyria Bootstrap Slider -->
+        <link rel="stylesheet" href="/FrontTemplate/assets/vendor/bootstrap-slider/dist/css/bootstrap-slider.min.css">
+
+        <!-- Summernote -->
+        <link rel="stylesheet" type="text/css" href="/FrontTemplate/assets/vendor/summernote/dist/summernote-bs4.css">
+
+        <!-- GoodGames -->
+        <link rel="stylesheet" href="/FrontTemplate/assets/css/goodgames.css">
+
+        <!-- Custom Styles -->
+        <link rel="stylesheet" href="/FrontTemplate/assets/css/custom.css">
+
+        <!-- END: Styles -->
+
+        <!-- jQuery -->
+        <script src="/FrontTemplate/assets/vendor/jquery/dist/jquery.min.js"></script>
+
+
+    </head>
+<body>
+<img class="nk-page-background-top" src="/FrontTemplate/assets/images/bg-top.png" alt="">
+<script src="/FrontTemplate/assets/vendor/object-fit-images/dist/ofi.min.js"></script>
+
+<!-- GSAP -->
+<script src="/FrontTemplate/assets/vendor/gsap/src/minified/TweenMax.min.js"></script>
+<script src="/FrontTemplate/assets/vendor/gsap/src/minified/plugins/ScrollToPlugin.min.js"></script>
+
+<!-- Popper -->
+<script src="/FrontTemplate/assets/vendor/popper.js/dist/umd/popper.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="/FrontTemplate/assets/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<!-- Sticky Kit -->
+<script src="/FrontTemplate/assets/vendor/sticky-kit/dist/sticky-kit.min.js"></script>
+
+<!-- Jarallax -->
+<script src="/FrontTemplate/assets/vendor/jarallax/dist/jarallax.min.js"></script>
+<script src="/FrontTemplate/assets/vendor/jarallax/dist/jarallax-video.min.js"></script>
+
+<!-- imagesLoaded -->
+<script src="/FrontTemplate/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+
+<!-- Flickity -->
+<script src="/FrontTemplate/assets/vendor/flickity/dist/flickity.pkgd.min.js"></script>
+
+<!-- Photoswipe -->
+<script src="/FrontTemplate/assets/vendor/photoswipe/dist/photoswipe.min.js"></script>
+<script src="/FrontTemplate/assets/vendor/photoswipe/dist/photoswipe-ui-default.min.js"></script>
+
+<!-- Jquery Validation -->
+<script src="/FrontTemplate/assets/vendor/jquery-validation/dist/jquery.validate.min.js"></script>
+
+<!-- Jquery Countdown + Moment -->
+<script src="/FrontTemplate/assets/vendor/jquery-countdown/dist/jquery.countdown.min.js"></script>
+<script src="/FrontTemplate/assets/vendor/moment/min/moment.min.js"></script>
+<script src="/FrontTemplate/assets/vendor/moment-timezone/builds/moment-timezone-with-data.min.js"></script>
+
+<!-- Hammer.js -->
+<script src="/FrontTemplate/assets/vendor/hammerjs/hammer.min.js"></script>
+
+<!-- NanoSroller -->
+<script src="/FrontTemplate/assets/vendor/nanoscroller/bin/javascripts/jquery.nanoscroller.js"></script>
+
+<!-- SoundManager2 -->
+<script src="/FrontTemplate/assets/vendor/soundmanager2/script/soundmanager2-nodebug-jsmin.js"></script>
+
+<!-- Seiyria Bootstrap Slider -->
+<script src="/FrontTemplate/assets/vendor/bootstrap-slider/dist/bootstrap-slider.min.js"></script>
+
+<!-- Summernote -->
+<script src="/FrontTemplate/assets/vendor/summernote/dist/summernote-bs4.min.js"></script>
+
+<!-- nK Share -->
+<script src="/FrontTemplate/assets/plugins/nk-share/nk-share.js"></script>
+
+<!-- GoodGames -->
+<script src="/FrontTemplate/assets/js/goodgames.min.js"></script>
+<script src="/FrontTemplate/assets/js/goodgames-init.js"></script>
+    </body>
+<tbody>
+<div class="nk-main">
+
+    <div class="nk-gap-2"></div>
+
+    <div> <h2 class="col-md-12 text-center breadcrumbs_inner" style="color: antiquewhite">
+            Inscription
+        </h2> </div>
+
+
+        <div class="container">
+           <div class="col-md-8 text-center breadcrumbs_inner" >
+
+
+
+            {{form_start(form,{'attr':{'class':'wpcf7-form'}})}}
+
+
+            <!--<input type="text" name="your-name" value="" size="40" class="" aria-required="true" aria-invalid="false" placeholder="id" />-->
+                {{form_widget(form.nom, {'attr': {'class': 'wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control'}}) }}</span></p>
+                <div>{{ form_errors(form.nom) }}</div>
+
+
+
+            <!--<input type="text" name="your-name" value="" size="40" class="" aria-required="true" aria-invalid="false" placeholder="id" />-->
+
+            {{ form_widget(form.prenom, {'attr': {'class': 'wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control'}}) }}</span></p>
+        <div>{{ form_errors(form.prenom) }}</div>
+
+
+            <!--<input type="text" name="your-name" value="" size="40" class="" aria-required="true" aria-invalid="false" placeholder="id" />-->
+
+            {{ form_widget(form.adresse, {'attr': {'class': 'wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control'}}) }}</span></p>
+        <div>{{ form_errors(form.adresse) }}</div>
+
+
+            <!--<input type="text" name="your-name" value="" size="40" class="" aria-required="true" aria-invalid="false" placeholder="id" />-->
+
+            {{ form_widget(form.email, {'attr': {'class': 'wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control'}}) }}</span></p>
+        <div>{{ form_errors(form.email) }}</div>
+
+             <!--  {{ form_widget(form.roles, {'attr': {'class': 'wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control'}}) }}</span></p>/-->
+             <!--   <div>{{ form_errors(form.roles) }}</div>-->
+
+
+
+            <!--<input type="text" name="your-name" value="" size="40" class="" aria-required="true" aria-invalid="false" placeholder="id" />-->
+
+            {{ form_widget(form.num, {'attr': {'class': 'wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control'}}) }}</span></p>
+        <div>{{ form_errors(form.num) }}</div>
+
+
+
+            <!--<input type="text" name="your-name" value="" size="40" class="" aria-required="true" aria-invalid="false" placeholder="id" />-->
+
+            {{ form_widget(form.password, {'attr': {'class': 'wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control'}}) }}</span></p>
+        <div>{{ form_errors(form.password) }}</div>
+
+
+            <button class="btn" style="background-color: #731036 ; color: white"  type="submit" >Ajouter</button>
+
+               {{ form_end(form) }}
+
+        <a class="btn" style="background-color: #731036 ; color: white" href="{{ path('app_login') }}">retour</a>
+    </div>
+        </div>
+
+
+
+
+</div>
+
+</tbody>
+</html>

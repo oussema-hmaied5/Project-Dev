@@ -1,0 +1,44 @@
+{% extends 'back.html.twig' %}
+
+{% block title %}Liste des Jeux{% endblock %}
+
+{% block content %}
+<h1>Jeux</h1>
+<div class="card-body table-responsive p-0">
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nom</th>
+            <th>Entreprise</th>
+            <th>Type</th>
+            <th>Genre</th>
+            <th>Catégorie</th>
+            <th>actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for jeu in jeus %}
+            <tr>
+                <td>{{ jeu.id }}</td>
+                <td>{{ jeu.nom }}</td>
+                <td>{{ jeu.entreprise }}</td>
+                <td>{{ jeu.type }}</td>
+                <td>{{ jeu.genre }}</td>
+                <td>{{ jeu.category.titre }}</td>
+                <td>
+                    <a href="{{ path('jeu_show', {'id': jeu.id}) }}">show</a>
+                    <a href="{{ path('jeu_edit', {'id': jeu.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {{ knp_pagination_render(jeus) }}
+    <a href="{{ path('jeu_new') }}">Create new</a>
+    <a href="{{ path('jeu_list') }}">Imprimer</a>
+    {% endblock %}

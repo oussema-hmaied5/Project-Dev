@@ -1,0 +1,46 @@
+{% block content %}
+    <html>
+    <head>
+        <title>Titre du document</title>
+        <style>
+
+            h1
+            {
+                border: 3px rosybrown double;
+            }
+            table,
+            th,
+            td {
+                padding: 10px;
+                border: 2px double blueviolet;
+                border-collapse: collapse;
+            }
+        </style>
+    </head>
+<body>
+    <h1 align = "center" > Liste des jeux</h1>
+    <div class="card-body table-responsive p-0">
+    <table class="table">
+        <thead>
+        <tr>
+            <th class="text-center">Name</th>
+            <th class="text-center">Publisher</th>
+            <th class="text-center">Type</th>
+            <th class="text-center">Genre</th>
+            <th class="text-center">Catégorie</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for jeu in jeus %}
+            <tr>
+                <td>{{ jeu.nom }}</td>
+                <td>{{ jeu.entreprise }}</td>
+                <td>{{ jeu.type }}</td>
+                <td>{{ jeu.genre }}</td>
+                <td>{{ jeu.category.titre }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    </html>
+{% endblock %}
