@@ -82,7 +82,9 @@
     <!-- START: Top Contacts -->
     <div class="nk-contacts-top">
         <div class="container">
+
             <div class="nk-contacts-left">
+                <h5> <a href="{{ path('home') }}">retour</a></h5>
             </div>
 
 
@@ -94,8 +96,11 @@
                     <b>  {{ app.user.prenom }}	{{ app.user.nom }} </b>
 
                    <a href="{{ path('app_logout') }}"><img src="{{ asset('img_7.png') }}" height="30" width="30"> </a>
+
                     </span>
-             </div>
+            </div>
+
+
         </div>
     </div>
     <!-- END: Top Contacts -->
@@ -115,120 +120,22 @@
             <div class="nk-nav-table">
 
                 <a href="index.html" class="nk-nav-logo">
-                    <img src="/FrontTemplate/assets/images/logo.png" alt="GoodGames" width="199">
+                    <img src="assets/images/logo.png" alt="GoodGames" width="199" height="100">
                 </a>
 
                 <ul class="nk-nav nk-nav-right d-none d-lg-table-cell" data-nav-mobile="#nk-nav-mobile">
 
-                    <li class="active nk-drop-item">
-                        <a href="elements.html">
-                            Features
+                    <li class=" nk-drop-item">
+                        <a href="jeux">
+                            Jeux
 
-                        </a><ul class="dropdown">
-
-                            <li>
-                                <a href="elements.html">
-                                    Elements (Shortcodes)
-
-                                </a>
-                            </li>
-                            <li class="active nk-drop-item">
-                                <a href="forum.html">
-                                    Forum
-
-                                </a><ul class="dropdown">
-
-                                    <li class="active">
-                                        <a href="forum.html">
-                                            Forum
-
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="forum-topics.html">
-                                            Topics
-
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="forum-single-topic.html">
-                                            Single Topic
-
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="widgets.html">
-                                    Widgets
-
-                                </a>
-                            </li>
-                            <li>
-                                <a href="coming-soon.html">
-                                    Coming Soon
-
-                                </a>
-                            </li>
-                            <li>
-                                <a href="offline.html">
-                                    Offline
-
-                                </a>
-                            </li>
-                            <li>
-                                <a href="404.html">
-                                    404
-
-                                </a>
-                            </li>
-                        </ul>
+                        </a>
                     </li>
                     <li class=" nk-drop-item">
-                        <a href="blog-list.html">
-                            Blog
+                        <a href="/actualite/">
+                            Actualite
 
-                        </a><ul class="dropdown">
-
-                            <li>
-                                <a href="news.html">
-                                    News
-
-                                </a>
-                            </li>
-                            <li class=" nk-drop-item">
-                                <a href="blog-grid.html">
-                                    Blog With Sidebar
-
-                                </a><ul class="dropdown">
-
-                                    <li>
-                                        <a href="blog-grid.html">
-                                            Blog Grid
-
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="blog-list.html">
-                                            Blog List
-
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="blog-fullwidth.html">
-                                    Blog Fullwidth
-
-                                </a>
-                            </li>
-                            <li>
-                                <a href="blog-article.html">
-                                    Blog Article
-
-                                </a>
-                            </li>
-                        </ul>
+                        </a>
                     </li>
                     <li>
                         <a href="gallery.html">
@@ -237,74 +144,31 @@
                         </a>
                     </li>
                     <li class=" nk-drop-item">
-                        <a href="tournaments.html">
+                        <a href="tournois">
                             Tournaments
 
                         </a><ul class="dropdown">
 
                             <li>
-                                <a href="tournaments.html">
+                                <a href="tournois">
                                     Tournament
 
                                 </a>
                             </li>
                             <li>
-                                <a href="tournaments-teams.html">
+                                <a href="equipes">
                                     Teams
 
                                 </a>
                             </li>
-                            <li>
-                                <a href="tournaments-teammate.html">
-                                    Teammate
 
-                                </a>
-                            </li>
                         </ul>
                     </li>
                     <li class=" nk-drop-item">
-                        <a href="store.html">
-                            Store
+                        <a href="Ajoutereclamation/add/{id}">
+                            Reclamation
 
-                        </a><ul class="dropdown">
-
-                            <li>
-                                <a href="store.html">
-                                    Store
-
-                                </a>
-                            </li>
-                            <li>
-                                <a href="store-product.html">
-                                    Product
-
-                                </a>
-                            </li>
-                            <li>
-                                <a href="store-catalog.html">
-                                    Catalog
-
-                                </a>
-                            </li>
-                            <li>
-                                <a href="store-catalog-alt.html">
-                                    Catalog Alt
-
-                                </a>
-                            </li>
-                            <li>
-                                <a href="store-checkout.html">
-                                    Checkout
-
-                                </a>
-                            </li>
-                            <li>
-                                <a href="store-cart.html">
-                                    Cart
-
-                                </a>
-                            </li>
-                        </ul>
+                        </a>
                     </li>
                 </ul>
                 <ul class="nk-nav nk-nav-right nk-nav-icons">
@@ -324,8 +188,6 @@
             </div>
         </div>
     </nav>
-    <!-- END: Navbar -->
-
 </header>
 
 
@@ -365,7 +227,7 @@ Additional Classes:
         <ul class="nk-breadcrumbs">
 
 
-            <a href="{{ path('home') }}">retour</a>
+
 
 
 

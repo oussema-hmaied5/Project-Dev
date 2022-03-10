@@ -17,10 +17,11 @@
         "fzaninotto/faker": "^1.5",
         "hwi/oauth-bundle": "^1.4",
         "knplabs/knp-paginator-bundle": "^5.8",
-
         "league/oauth2-facebook": "^2.2",
         "league/oauth2-github": "^3.0",
         "league/oauth2-google": "^4.0",
+        "mercuryseries/flashy": "^1.0",
+        "mercuryseries/flashy-bundle": "^4.0",
         "php-http/guzzle6-adapter": "^2.0",
         "php-http/httplug-bundle": "^1.25",
         "phpdocumentor/reflection-docblock": "^5.3",
@@ -29,7 +30,7 @@
         "scheb/2fa-email": "v5.4.0",
         "scheb/2fa-google-authenticator": "v5.4.0",
         "scheb/2fa-trusted-device": "v5.4.0",
-        "sensio/framework-extra-bundle": "^5.1",
+        "sensio/framework-extra-bundle": "^6.2",
         "symfony/asset": "4.4.*",
         "symfony/console": "4.4.*",
         "symfony/deprecation-contracts": "^3.0",
@@ -75,14 +76,8 @@
         "symfony/stopwatch": "^4.4",
         "symfony/var-dumper": "^4.4",
         "symfony/web-profiler-bundle": "^4.4",
-        "phpunit/phpunit": "^9.5",
-      "symfony/browser-kit": "4.4.*",
-      "symfony/css-selector": "4.4.*",
-      "symfony/debug-bundle": "4.4.*",
-      "symfony/maker-bundle": "^1.0",
-      "symfony/phpunit-bridge": "^6.0",
-      "symfony/stopwatch": "4.4.*",
-      "symfony/web-profiler-bundle": "4.4.*"
+        "phpunit/phpunit": "^9.5"
+
 
     },
 

@@ -1,0 +1,11 @@
+
+{% block body %}
+
+    <h1>{{ actualite.titre }}</h1>
+    <p>{{ actualite.updatedAt|date }} </p>
+    <div>{{ actualite.contenu|raw }}</div>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,19 @@
+{%  form_theme formComment 'bootstrap_4_layout.html.twig' %}
+{% extends 'base.html.twig' %}
+
+{% block title %}Actualite{% endblock %}
+
+{% block body %}
+
+    <div align="center"><h1>{{ actualite.titre }}</h1></div>
+    <div align="center"><img src="{{ asset('/images/actualite/'~actualite.image) }}" alt="" width="800" height="450">
+    </div>
+    <div><h4 align="justify">{{ actualite.contenu|raw }} </h4></div>
+    <h2><a href="{{ path('actu_pdf', {'id': actualite.id}) }}">Imprimer</a></h2>
+
+    <h4>Commentaires</h4>
+    {% for commentaire in commentaires %}
+        <p align="justify">*{{ commentaire.createdAt|date }}:     {{ commentaire.contenu }}</p>
+    {% endfor %}
+    {{ form(formComment) }}
+{% endblock %}

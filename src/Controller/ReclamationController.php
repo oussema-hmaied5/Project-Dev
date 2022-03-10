@@ -20,7 +20,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 class ReclamationController extends AbstractController
 {
     /**
-     * @Route("/Ajoutereclamation/add/{id}", name="Ajoutereclamation")
+     * @Route("/Ajoutereclamation/add/{id}", name="Ajoutereclamation", methods={"GET","POST"})
      */
     public function ajouter(Request $request, $id, UserRepository $repository)
     {
@@ -84,7 +84,7 @@ class ReclamationController extends AbstractController
     }
 
     /**
-     * @IsGranted("ROLE_ADMIN")
+
      * @Route("/afficher", name="afficher")
      */
     public function afficher()

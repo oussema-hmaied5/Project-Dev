@@ -69,7 +69,7 @@
 
 
 
-<!--
+<!--{% block header %}
     Additional Classes:
         .nk-header-opaque
 -->
@@ -80,6 +80,8 @@
     <!-- START: Top Contacts -->
     <div class="nk-contacts-top">
         <div class="container">
+
+
 
 
             <div class="nk-contacts-right">
@@ -122,66 +124,13 @@
                         <a href="jeux">
                            Jeux
 
-                        </a><ul class="dropdown">
-
-
-                            <li class=" nk-drop-item">
-
-                            </li>
-
-                            <li>
-                                <a href="404.html">
-                                    404
-
-                                </a>
-                            </li>
-                        </ul>
+                        </a>
                     </li>
                     <li class=" nk-drop-item">
-                        <a href="blog-list.html">
-                            Blog
+                        <a href="/actualite/">
+                           Actualite
 
-                        </a><ul class="dropdown">
-
-                            <li>
-                                <a href="news.html">
-                                    New
-
-                                </a>
-                            </li>
-                            <li class=" nk-drop-item">
-                                <a href="blog-grid.html">
-                                    Blog With Sidebar
-
-                                </a><ul class="dropdown">
-
-                                    <li>
-                                        <a href="blog-grid.html">
-                                            Blog Grid
-
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="blog-list.html">
-                                            Blog List
-
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="blog-fullwidth.html">
-                                    Blog Fullwidth
-
-                                </a>
-                            </li>
-                            <li>
-                                <a href="blog-article.html">
-                                    Blog Article
-
-                                </a>
-                            </li>
-                        </ul>
+                        </a>
                     </li>
                     <li>
                         <a href="gallery.html">
@@ -234,9 +183,10 @@
             </div>
         </div>
     </nav>
-    <!-- END: Navbar -->
-
 </header>
+    <!-- END: Navbar -->
+    {% endblock %}
+
 
 
 
