@@ -5,7 +5,7 @@ namespace App\Controller;
 use App\Entity\Category;
 use App\Form\Category1Type;
 use App\Repository\CategoryRepository;
-use Doctrine\ORM\EntityManagerInterfaceAlias;
+//use Doctrine\ORM\EntityManagerInterfaceAlias;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -23,6 +23,19 @@ class CategoryController extends AbstractController
     {
         return $this->render('category/index.html.twig', [
             'categories' => $categoryRepository->findAll(),
+        ]);
+    }
+
+    /**
+     * @Route("/searchcategoryajax", name="ajaxcategory")
+     */
+    public function searchajax(Request $request)
+    {
+        $repository = $this->getDoctrine()->getRepository(Category::class);
+        $requestString=$request->get('searchValue');
+        $categories = $repository->findcategorybytitre($requestString);
+        return $this->render('category/ajaxsearchcategory.html.twig', [
+            "categories"=>$categories,
         ]);
     }
 
@@ -86,4 +99,7 @@ class CategoryController extends AbstractController
 
         return $this->redirectToRoute('app_category_index', [], Response::HTTP_SEE_OTHER);
     }
+
+
+
 }

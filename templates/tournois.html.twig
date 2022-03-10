@@ -71,11 +71,6 @@
     Additional Classes:
         .nk-header-opaque
 -->
-
-<!--{% block header %}
-    Additional Classes:
-        .nk-header-opaque
--->
 <header class="nk-header nk-header-opaque">
 
 
@@ -127,13 +122,13 @@
                 <ul class="nk-nav nk-nav-right d-none d-lg-table-cell" data-nav-mobile="#nk-nav-mobile">
 
                     <li class=" nk-drop-item">
-                        <a href="jeux">
+                        <a href={{ path('jeu_front')}}>
                             Jeux
 
                         </a>
                     </li>
                     <li class=" nk-drop-item">
-                        <a href="/actualite/">
+                        <a href="{{ path('app_actualite_index')}}">
                             Actualite
 
                         </a>
@@ -145,19 +140,19 @@
                         </a>
                     </li>
                     <li class=" nk-drop-item">
-                        <a href="tournois">
+                        <a href="{{ path('tournois_front')}}">
                             Tournaments
 
                         </a><ul class="dropdown">
 
                             <li>
-                                <a href="tournois">
+                                <a href="{{ path('tournois_front')}}">
                                     Tournament
 
                                 </a>
                             </li>
                             <li>
-                                <a href="equipes">
+                                <a href="{{ path('equipe_front')}}">
                                     Teams
 
                                 </a>
@@ -166,7 +161,7 @@
                         </ul>
                     </li>
                     <li class=" nk-drop-item">
-                        <a href="Ajoutereclamation/add/{id}">
+                        <a href=" {{ path('Ajoutereclamation', {'id': app.user.id}) }}">
                             Reclamation
 
                         </a>
@@ -190,8 +185,21 @@
         </div>
     </nav>
 </header>
-<!-- END: Navbar -->
-{% endblock %}
+
+
+
+    <!--
+        START: Navbar
+
+        Additional Classes:
+            .nk-navbar-sticky
+            .nk-navbar-transparent
+            .nk-navbar-autohide
+    -->
+
+    <!-- END: Navbar -->
+
+</header>
 
 
 <!--
@@ -228,6 +236,10 @@ Additional Classes:
         <ul class="nk-breadcrumbs">
 
 
+
+
+
+
             <li><span>Tournaments</span></li>
 
         </ul>
@@ -244,19 +256,22 @@ Additional Classes:
                 <div class="nk-gap"></div>
                 {% for tournament in tournaments %}
 
-                    <h3 class="nk-decorated-h-2"><span><span class="text-main-1">Tournament</span> {{ tournament.name }}</span>
+                    <h3 class="nk-decorated-h-2"><span> <span class="text-main-1">Tournoi: </span> {{ tournament.name }}</span>
                     </h3>
 
                     <!-- START: Now Playing -->
                     <div class="nk-match">
                         <div class="nk-match-team-left">
                             <a href="#">
-                        <span class="nk-match-team-logo">
+                        <span class
+                              ="nk-match-team-logo">
                             <img src="assets/images/team-3.jpg" alt="">
                         </span>
                                 <span class="nk-match-team-name">
                             {{ tournament.name }}
                         </span>
+                                </span>
+
                             </a>
                         </div>
                         <div class="nk-match-status">
@@ -264,11 +279,15 @@ Additional Classes:
                                 <span class="nk-match-status-vs">{{ tournament.lieu }}</span>
                                 <span class="nk-match-status-date">{{ tournament.date|date("m-d-Y") }}</span>
                                 <span class="nk-match-score bg-dark-1">
-                            {{ tournament.prize }} CASH
+                            {{ tournament.prize }} DINARS
                         </span>
+
                             </a>
                         </div>
                         <div class="nk-match-team-right">
+                            <span class="nk-match-team-name float-right">
+                           Jeu: {{ tournament.IdJeu.nom }}
+                        </span>
                             <a href="#">
                         <span class="nk-match-team-name">
 
@@ -290,6 +309,36 @@ Additional Classes:
 
                     <div class="nk-gap-2"></div>
                     <div class="nk-gap"></div>
+                    <div class="nk-countdown nk-countdown-center" data-end="{{ tournament.date|date("Y-m-d H:m") }}" data-timezone="EST">
+                        <div class="nk-hexagon">
+                            <div class="nk-hexagon-inner"></div>
+                            <span>00</span>
+                            <small>Years</small>
+                        </div>
+                        <div class="nk-hexagon">
+                            <div class="nk-hexagon-inner"></div>
+                            <span>00</span>
+                            <small>Days</small>
+                        </div>
+                        <div class="nk-hexagon">
+                            <div class="nk-hexagon-inner"></div>
+                            <span>00</span>
+                            <small>Hours</small>
+                        </div>
+                        <div class="nk-hexagon">
+                            <div class="nk-hexagon-inner"></div>
+                            <span>00</span>
+                            <small>Minutes</small>
+                        </div>
+                        <div class="nk-hexagon">
+                            <div class="nk-hexagon-inner"></div>
+                            <span>00</span>
+                            <small>Seconds</small>
+                        </div></div>
+                    <div class="nk-gap"></div>
+                    <div class="nk-gap-2"></div>
+
+
                     <h3 class="nk-decorated-h-2"><span><span class="text-main-2"></span>Participants</span></h3>
 
                     <!-- START: Latest Matches -->
@@ -328,6 +377,7 @@ Additional Classes:
                         </div>
                     {% endfor %}
 
+
                     <div class="nk-gap"></div>
                     <div class="nk-gap"></div>
                     <div class="nk-gap"></div>
@@ -346,20 +396,9 @@ Additional Classes:
                 <h4 align="center"  class="text-main-1">Page</h4>
                 <div class="nk-gap"></div>
                 <div class="nk-pagination nk-pagination-center">
-                    <a href="#" class="nk-pagination-prev">
-                        <span class="ion-ios-arrow-back"></span>
-                    </a>
                     <nav>
-                        <a class="nk-pagination-current" href="#">1</a>
-                        <a href="#">2</a>
-                        <a href="#">3</a>
-                        <a href="#">4</a>
-                        <span>...</span>
-                        <a href="#">14</a>
+                        {{ knp_pagination_render(tournaments,'paginator.html.twig') }}
                     </nav>
-                    <a href="#" class="nk-pagination-next">
-                        <span class="ion-ios-arrow-forward"></span>
-                    </a>
                 </div>
                 <!-- END: Pagination -->
 

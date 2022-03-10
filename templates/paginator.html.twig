@@ -1,0 +1,40 @@
+{% if pageCount > 1 %}
+<div class="nk-pagination nk-pagination-center">
+
+    {% if first is defined and current != first %}
+    <a href="{{ path(route, query|merge({(pageParameterName): first})) }}" class="nk-pagination-prev">
+        <span class="ion-ios-arrow-back"></span>
+        <span class="ion-ios-arrow-back"></span>
+    </a>
+    {% endif %}
+
+    {% if previous is defined %}
+        <a href="{{ path(route, query|merge({(pageParameterName): previous})) }}" class="nk-pagination-prev">
+            <span class="ion-ios-arrow-back"></span>
+        </a>
+    {% endif %}
+
+    <nav>
+        {% for page in pagesInRange %}
+        {% if page == current %}
+        <a class="nk-pagination-current" href="#">{{ page }}</a>
+        {% else %}
+        <a href="{{ path(route, query|merge({(pageParameterName): page})) }}">{{ page }}</a>
+        {% endif %}
+        {% endfor %}
+    </nav>
+    {% if next is defined %}
+        <a href="{{ path(route, query|merge({(pageParameterName): next})) }}" class="nk-pagination-prev">
+            <span class="ion-ios-arrow-forward"></span>
+        </a>
+    {% endif %}
+
+    {% if last is defined and current != last %}
+        <a href="{{ path(route, query|merge({(pageParameterName): last})) }}" class="nk-pagination-prev">
+            <span class="ion-ios-arrow-forward"></span>
+            <span class="ion-ios-arrow-forward"></span>
+        </a>
+    {% endif %}
+</div>
+{% endif %}
+

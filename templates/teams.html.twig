@@ -124,13 +124,13 @@
                 <ul class="nk-nav nk-nav-right d-none d-lg-table-cell" data-nav-mobile="#nk-nav-mobile">
 
                     <li class=" nk-drop-item">
-                        <a href="jeux">
+                        <a href={{ path('jeu_front')}}>
                             Jeux
 
                         </a>
                     </li>
                     <li class=" nk-drop-item">
-                        <a href="/actualite/">
+                        <a href="{{ path('app_actualite_index')}}">
                             Actualite
 
                         </a>
@@ -142,19 +142,19 @@
                         </a>
                     </li>
                     <li class=" nk-drop-item">
-                        <a href="tournois">
+                        <a href="{{ path('tournois_front')}}">
                             Tournaments
 
                         </a><ul class="dropdown">
 
                             <li>
-                                <a href="tournois">
+                                <a href="{{ path('tournois_front')}}">
                                     Tournament
 
                                 </a>
                             </li>
                             <li>
-                                <a href="equipes">
+                                <a href="{{ path('equipe_front')}}">
                                     Teams
 
                                 </a>
@@ -163,7 +163,7 @@
                         </ul>
                     </li>
                     <li class=" nk-drop-item">
-                        <a href="Ajoutereclamation/add/{id}">
+                        <a href=" {{ path('Ajoutereclamation', {'id': app.user.id}) }}">
                             Reclamation
 
                         </a>

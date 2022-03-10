@@ -81,6 +81,9 @@
     <div class="nk-contacts-top">
         <div class="container">
 
+            <div class="nk-contacts-left">
+                <h5> <a href="{{ path('home') }}">retour</a></h5>
+            </div>
 
 
 
@@ -115,20 +118,20 @@
             <div class="nk-nav-table">
 
                 <a href="index.html" class="nk-nav-logo">
-                        <img src="assets/images/logo.png" alt="GoodGames" width="199" height="100">
+                    <img src="assets/images/logo.png" alt="GoodGames" width="199" height="100">
                 </a>
 
                 <ul class="nk-nav nk-nav-right d-none d-lg-table-cell" data-nav-mobile="#nk-nav-mobile">
 
                     <li class=" nk-drop-item">
-                        <a href="jeux">
-                           Jeux
+                        <a href={{ path('jeu_front')}}>
+                            Jeux
 
                         </a>
                     </li>
                     <li class=" nk-drop-item">
-                        <a href="/actualite/">
-                           Actualite
+                        <a href="{{ path('app_actualite_index')}}">
+                            Actualite
 
                         </a>
                     </li>
@@ -139,19 +142,19 @@
                         </a>
                     </li>
                     <li class=" nk-drop-item">
-                        <a href="tournois">
+                        <a href="{{ path('tournois_front')}}">
                             Tournaments
 
                         </a><ul class="dropdown">
 
                             <li>
-                                <a href="tournois">
+                                <a href="{{ path('tournois_front')}}">
                                     Tournament
 
                                 </a>
                             </li>
                             <li>
-                                <a href="equipes">
+                                <a href="{{ path('equipe_front')}}">
                                     Teams
 
                                 </a>
@@ -160,7 +163,7 @@
                         </ul>
                     </li>
                     <li class=" nk-drop-item">
-                        <a href="Ajoutereclamation/add/{id}">
+                        <a href=" {{ path('Ajoutereclamation', {'id': app.user.id}) }}">
                             Reclamation
 
                         </a>

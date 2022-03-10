@@ -127,13 +127,13 @@
                 <ul class="nk-nav nk-nav-right d-none d-lg-table-cell" data-nav-mobile="#nk-nav-mobile">
 
                     <li class=" nk-drop-item">
-                        <a href="jeux">
+                        <a href={{ path('jeu_front')}}>
                             Jeux
 
                         </a>
                     </li>
                     <li class=" nk-drop-item">
-                        <a href="/actualite/">
+                        <a href="{{ path('app_actualite_index')}}">
                             Actualite
 
                         </a>
@@ -145,19 +145,19 @@
                         </a>
                     </li>
                     <li class=" nk-drop-item">
-                        <a href="tournois">
+                        <a href="{{ path('tournois_front')}}">
                             Tournaments
 
                         </a><ul class="dropdown">
 
                             <li>
-                                <a href="tournois">
+                                <a href="{{ path('tournois_front')}}">
                                     Tournament
 
                                 </a>
                             </li>
                             <li>
-                                <a href="equipes">
+                                <a href="{{ path('equipe_front')}}">
                                     Teams
 
                                 </a>
@@ -166,7 +166,7 @@
                         </ul>
                     </li>
                     <li class=" nk-drop-item">
-                        <a href="Ajoutereclamation/add/{id}">
+                        <a href=" {{ path('Ajoutereclamation', {'id': app.user.id}) }}">
                             Reclamation
 
                         </a>
@@ -302,6 +302,7 @@ Additional Classes:
                     <div class="nk-gap"></div>
                     <div class="nk-gap"></div>
 
+
                     <!-- END: Latest Matches -->
                 {% endfor %}
                 <!--
@@ -312,6 +313,22 @@ Additional Classes:
               .nk-pagination-right
       -->
                 <div class="nk-gap-2"></div>
+
+                <div class="nk-match">
+                    <div class="row">
+                        <div class="col-md-6  align-center">
+                            {{ form_start(form) }}
+                            {{ form_row(form.name, {'attr': {'class': 'form-control', 'placeholder': 'Recherche'}}) }}
+                            <button type="submit" class="btn btn-success btn-block">Recherche</button>
+                            {{ form_end(form) }}
+                        </div>
+                    </div>
+                    <div class="row col-md-6">
+                        {% if qrCode %}
+                            <img src="{{ qrCode }}" alt="qr-code">
+                        {% endif %}
+                    </div>
+                </div>
                 <h4 align="center"  class="text-main-1">Page</h4>
                 <div class="nk-gap"></div>
                 <div class="nk-pagination nk-pagination-center">

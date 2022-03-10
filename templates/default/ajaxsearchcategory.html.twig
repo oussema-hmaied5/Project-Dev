@@ -1,0 +1,15 @@
+{% for category in categories %}
+    <tr>
+        <td>{{ category.id }}</td>
+        <td>{{ category.titre }}</td>
+        <td>{{ category.description }}</td>
+        <td>
+            <a href="{{ path('app_category_show', {'id': category.id}) }}">show</a>
+            <a href="{{ path('app_category_edit', {'id': category.id}) }}">edit</a>
+        </td>
+    </tr>
+{% else %}
+    <tr>
+        <td colspan="4">no records found</td>
+    </tr>
+{% endfor %}

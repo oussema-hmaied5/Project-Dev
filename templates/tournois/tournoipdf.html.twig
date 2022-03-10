@@ -1,0 +1,33 @@
+
+{% block content %}
+    <h1 align="center">Liste des Tournois</h1>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Date</th>
+            <th>Prize</th>
+            <th>Max_equipes</th>
+            <th>Lieu</th>
+            <th>Jeu</th>
+
+
+        </tr>
+        </thead>
+        <tbody>
+        {% for tournoi in tournois %}
+            <tr>
+                <td>{{ tournoi.id }}</td>
+                <td>{{ tournoi.Date ? tournoi.Date|date('Y-m-d') : '' }}</td>
+                <td>{{ tournoi.Prize }} Dinars</td>
+                <td>{{ tournoi.maxEquipes }}</td>
+                <td>{{ tournoi.Lieu }}</td>
+                <td>{{ tournoi.idJeu.nom }}</td>
+            <tr>
+
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

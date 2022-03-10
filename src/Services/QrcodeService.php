@@ -8,7 +8,6 @@ use Endroid\QrCode\Encoding\Encoding;
 use Endroid\QrCode\Builder\BuilderInterface;
 use Endroid\QrCode\ErrorCorrectionLevel\ErrorCorrectionLevelHigh;
 use Endroid\QrCode\Label\Alignment\LabelAlignmentCenter;
-
 class QrcodeService
 {
     /**
@@ -23,14 +22,14 @@ class QrcodeService
  public function qrcode($query)
  {
 
- $url='https://www.facebook.com/';
+ $url='https://www.twitch.tv/';
  $objDateTime = new \DateTime('NOW');
  $dateString = $objDateTime->format('d-m-Y H:i:s');
 
-     $path = dirname(__DIR__, 2).'FrontTemplate/qr-code';
+     $path = dirname(__DIR__, 2).'/public/assets/';
 //set qrcode
      $result = $this->builder
-     ->data($url.$query)
+     ->data($url . $query)
      ->encoding(new Encoding('UTF-8'))
      ->errorCorrectionLevel(new ErrorCorrectionLevelHigh())
       ->size(400)
