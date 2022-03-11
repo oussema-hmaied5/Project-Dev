@@ -1,0 +1,35 @@
+{% block content %}
+    <h1>Equipes</h1>
+
+    <table class="table">
+        <thead>&
+        <tr>
+            <th>Id</th>
+            <th>Nom_equipe</th>
+            <th>Nbr_joueurs</th>
+            <th>Nom_joueurs</th>
+            <th>actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for equipe in equipes %}
+            <tr>
+                <td>{{ equipe.id }}</td>
+                <td>{{ equipe.nomEquipe }}</td>
+                <td>{{ equipe.nbrJoueurs }}</td>
+                <td>{{ equipe.nomJoueurs }}</td>
+                <td>
+                    <a href="{{ path('equipe_show', {'id': equipe.id}) }}">show</a>
+                    <a href="{{ path('equipe_edit', {'id': equipe.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('equipe_new') }}">Create new</a>
+{% endblock %}

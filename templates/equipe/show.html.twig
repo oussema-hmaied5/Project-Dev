@@ -1,0 +1,38 @@
+{% extends 'back.html.twig' %}
+
+{% block title %}Show Equipe {% endblock %}
+
+{% block content %}
+    <h1>Equipe</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ equipe.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom_equipe</th>
+                <td>{{ equipe.nomEquipe }}</td>
+            </tr>
+            <tr>
+                <th>Nbr_joueurs</th>
+                <td>{{ equipe.nbrJoueurs }}</td>
+            </tr>
+            <tr>
+                <th>Nom_joueurs</th>
+                <td>{{ equipe.nomJoueurs }}</td>
+            </tr>
+            <tr>
+                <th>Nom_joueurs</th>
+                <td>{{ equipe.nomJoueurs }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('equipe_index') }}">back to list</a>
+
+    <a href="{{ path('equipe_edit', {'id': equipe.id}) }}">edit</a>
+
+    {{ include('equipe/_delete_form.html.twig') }}
+{% endblock %}

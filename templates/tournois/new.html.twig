@@ -1,0 +1,17 @@
+{% extends 'back.html.twig' %}
+
+{% block title %}New Tournoi{% endblock %}
+
+{% block content %}
+    <div class="col-md-6">
+        <div class="card-header">
+            <h3 class="card-title">Nouveau Tournoi</h3>
+        </div>
+        <div class="card-body">
+            {{ include('tournois/_form.html.twig') }}
+
+            <a href="{{ path('tournois_index') }}">back to list</a>
+        </div>
+    </div>
+
+{% endblock %}
